@@ -188,6 +188,8 @@
         href: develop/auth-with-office-dialog-api.md
       - name: Authorize external services
         href: develop/auth-external-add-ins.md
+      - name: Authorize to Microsoft Graph without SSO
+        href: develop/authorize-to-microsoft-graph-without-sso.md
       - name: Enable SSO in an add-in
         items:
         - name: Enable single sign-on
