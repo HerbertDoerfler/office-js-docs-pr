@@ -1,13 +1,16 @@
 ---
 title: Authorize external services in your Office Add-in
 description: ''
-ms.date: 02/12/2019
+ms.date: 07/24/2019
 localization_priority: Priority
 ---
 
 # Authorize external services in your Office Add-in
 
 Popular online services, including Office 365, Google, Facebook, LinkedIn, SalesForce, and GitHub, let developers give users access to their accounts in other applications. This gives you the ability to include these services in your Office Add-in.
+
+> [!NOTE]
+> The remainder of this article is about getting access to non-Microsoft services. For information about accessing Microsoft Graph (including Office 365), see [Access to Microsoft Graph with SSO](overview-authn-authz.md#access-to-microsoft-graph-with-sso) and [Access to Microsoft Graph without SSO](overview-authn-authz.md#access-to-microsoft-graph-without-sso).
 
 The industry standard framework for enabling web application access to an online service is **OAuth 2.0**. In most situations, you don't need to know the details of how the framework works to use it in your add-in. Many libraries are available that simplify the details for you.
 
@@ -26,27 +29,16 @@ You should be familiar with the pros and cons of the Implicit flow and the Autho
 > You also have the option of using a middleman service to perform authorization and pass the access token to your add-in. For details about this scenario, see the **Middleman services** section later in this article.
 
 ## Using the Implicit flow in Office Add-ins
-The best way to find out if an online service supports the Implicit flow is to consult the service's documentation. For services that support the Implicit flow, you can use the **Office-js-helpers** JavaScript library to do all the detailed work for you:
 
-- [Office-js-helpers](https://github.com/OfficeDev/office-js-helpers)
-
-For information about other libraries that support the Implicit flow, see the **Libraries** section later in this article.
+The best way to find out if an online service supports the Implicit flow is to consult the service's documentation. For information about libraries that support the Implicit flow, see the **Libraries** section later in this article.
 
 ## Using the Authorization Code flow in Office Add-ins
 
 Many libraries are available for implementing the Authorization Code flow in various languages and frameworks. For more information about some of these libraries, see the **Libraries** section later in this article.
 
-The following samples provide examples of add-ins that implement the Authorization Code flow:
+The following sample provides an example of an add-in that implements the Authorization Code flow: [THE SAMPLE IS UNDER DEVELOPMENT.]
 
-- [Office-Add-in-Nodejs-ServerAuth](https://github.com/OfficeDev/Office-Add-in-Nodejs-ServerAuth) (NodeJS)
-- [PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart) (ASP.NET MVC)
-
-### Relay/Proxy functions
-
-You can use the Authorization Code flow even with a serverless web application by storing the **client ID** and **client secret** values in a simple function that is hosted in a service such as [Azure Functions](https://azure.microsoft.com/services/functions) or [Amazon Lambda](https://aws.amazon.com/lambda).
-The function exchanges a given code for an **access token** and relays it back to the client. The security of this approach depends on how well access to the function is guarded.
-
-To use this technique, your add-in displays a UI/popup to show the login screen for the online service (Google, Facebook, and so on). When the user signs in and grants the add-in permission to her resources in the online service, the add-in receives a code which can be then sent to the online function. The services described in the **Middleman services** section later in this article use a similar flow.
+- [Office Add-in GitHub ASP.NET](https://github.com/OfficeDev/...): An ASP.NET based add-in (Excel, Word, or PowerPoint) that uses the Passport library to login and get an access token for GitHub data.
 
 ## Libraries
 
