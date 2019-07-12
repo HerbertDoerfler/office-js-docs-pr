@@ -7,9 +7,9 @@ localization_priority: Priority
 
 # Overview of authentication and authorization in Office Add-ins
 
-Web applications and, hence, Office Add-ins can be open to anonymous access or they can require users to login. In particular, you can require that your users be logged in with either a Microsoft Account or a Work or School (Office 365) account. This task is called user authentication.
+Web applications and, hence, Office Add-ins allow anonymous access by default, but you can require users to authenticate with a login. In particular, you can require that your users be logged in with either a Microsoft Account or a Work or School (Office 365) account. This task is called user authentication because it enables the add-in to know who the user is.
 
-Your add-in can also provide users with access to their Microsoft Graph data (such as their Office 365 profile, their OneDrive files, and their SharePoint data) or to data in other external sources such as Google, Facebook, LinkedIn, SalesForce, and GitHub. This task is called add-in (or app) authorization, because it is the *add-in* that is being authorized not the user, even though the user's permissions play a role in determining what the add-in is authorized to do.
+Your add-in can also get the user's consent to access their Microsoft Graph data (such as their Office 365 profile, their OneDrive files, and their SharePoint data) or to data in other external sources such as Google, Facebook, LinkedIn, SalesForce, and GitHub. This task is called add-in (or app) authorization, because it is the *add-in* that is being authorized not the user, even though the user's permissions play a role in determining what the add-in is authorized to do.
 
 You have a choice of two ways to accomplish these tasks.
 
@@ -64,7 +64,7 @@ Note also these samples:
 
 ## Access to non-Microsoft data sources
 
-Popular online services, including Google, Facebook, LinkedIn, SalesForce, and GitHub, let developers give users access to their accounts in other applications. This gives you the ability to include these services in your Office Add-in. For and overview of the ways that your add-in can do this, see [Authorize external services in your Office Add-in](auth-external-add-ins.md).
+Popular online services, including Google, Facebook, LinkedIn, SalesForce, and GitHub, let developers give users access to their accounts in other applications. This gives you the ability to include these services in your Office Add-in. For an overview of the ways that your add-in can do this, see [Authorize external services in your Office Add-in](auth-external-add-ins.md).
 
 See also this sample: [SAMPLE IS UNDER DEVELOPMENT]
 
