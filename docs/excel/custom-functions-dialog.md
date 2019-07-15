@@ -1,12 +1,12 @@
 ---
-ms.date: 06/18/2019
+ms.date: 07/15/2019
 description: Create a dialog box through custom functions in Excel using JavaScript.
 title: Display a dialog box from a custom function
 localization_priority: Priority
 ---
 # Display a dialog box from a custom function
 
-If your custom function needs to interact with the user, you can create a dialog box using the [`Office.Dialog` object](/javascript/api/office-runtime/officeruntime.dialog?view=office-js). A common scenario for using the dialog box is to authenticate a user so that your custom function can access a web service. For more details about authentication with custom functions, see [Custom functions authentication](./custom-functions-authentication.md).
+If your custom function needs to interact with the user, you can create a dialog box using the [`Office.Dialog` object](/javascript/api/office-runtime/officeruntime.dialog?view=office-js). A common scenario for using the dialog box is to authenticate a user so that your custom function can access a web service. For more details about authentication with custom functions, see [Custom functions authentication](./custom-functions-authentication.md). You can also consult the Patterns and Practices repository on Github for community-driven code samples that tackle subjects like authentication. 
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -15,11 +15,11 @@ If your custom function needs to interact with the user, you can create a dialog
 
 ## dialog box API example
 
-In the following code sample, the function `getTokenViaDialog` uses the `Dialog` API’s `displayWebDialogOptions` function to display a dialog box.
+In the following code sample, the function `getTokenViaDialog` uses the `Dialog` API’s `displayWebDialogOptions` function to display a dialog box. Note that this is not a complete example of authentication, but is included to show the capabilities of the Dialog object. It is assumed in the sample that the URL is going to redirect and prompt a user for their credentials.
 
 ```js
 /**
- * Function retrieves a cached token or opens a dialog box if there is no saved token. Note that this is not a sufficient example of authentication but is intended to show the capabilities of the Dialog object.
+ * Function retrieves a cached token or opens a dialog box if there is no saved token.
  * @param {string} url URL for a stored token.
  */
 function getTokenViaDialog(url) {
